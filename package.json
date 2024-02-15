@@ -8,8 +8,8 @@
   },
   "author": "Rupert St J W",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
-    "inquirer": "^9.2.14"
-  },
-  "type": "module"
+    "inquirer": "^8.2.6"
+  }
 }
