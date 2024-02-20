@@ -10,6 +10,7 @@ function generateMarkdown(answers) {
 ${licenses[answers.license].badge}
 
 ## Description
+
 ${answers.description}
 
 ## Table of Contents
