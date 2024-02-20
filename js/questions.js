@@ -1,3 +1,5 @@
+import licenses from "./licenses.js";
+
 // array of questions for user
 const questions = [
     {
@@ -54,17 +56,16 @@ const questions = [
         }
     },
     {
-        type: 'input',
+        type: 'list',
+        name: 'license',
+        message: 'Please select a license for your project.',
+        choices: Object.keys(licenses),
+    },
+    {
+        type: 'list',
         name: 'contributing',
         message: 'Please enter contribution guidelines for your project.',
-        validate: contributingInput => {
-            if (contributingInput) {
-                return true;
-            } else {
-                console.log('Please enter contribution guidelines for your project!');
-                return false;
-            }
-        }
+        choices: ['Fork & Pull Request', 'Shared Repository', 'Issue-Branch-Pull Request', 'None']
     },
     {
         type: 'input',
@@ -80,12 +81,6 @@ const questions = [
         }
     },
     {
-        type: 'list',
-        name: 'license',
-        message: 'Please select a license for your project.',
-        choices: ['MIT', 'Apache', 'GNU', 'BSD', 'None']
-    },
-    {
         type: 'input',
         name: 'github',
         message: 'Please enter your GitHub username.',
@@ -94,6 +89,19 @@ const questions = [
                 return true;
             } else {
                 console.log('Please enter your GitHub username!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Please enter your email address.',
+        validate: emailInput => {
+            if (emailInput) {
+                return true;
+            } else {
+                console.log('Please enter your email address!');
                 return false;
             }
         }

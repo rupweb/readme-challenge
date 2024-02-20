@@ -1,0 +1,2 @@
+- installed markdownlint and markdownlint-cli
+- updated package.json to include jest & babel
